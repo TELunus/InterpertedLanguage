@@ -1,0 +1,29 @@
+
+class banana
+{
+	object string m_color;
+	function ripen()
+	{
+		//change color
+	}
+	function print()
+	{
+		object string text;
+		run text.constructor("This banana is");
+		run text.print();
+		run self.m_color.print();
+	}
+	function constructor(string color)
+	{
+		run self.m_color.constructor(color);
+	}
+}
+
+object banana myBanana;
+function main()
+{
+	run myBanana.constructor("green");
+	run myBanana.ripen();
+	run myBanana.print();
+}
+run main();

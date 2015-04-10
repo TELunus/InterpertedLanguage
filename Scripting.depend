@@ -1,0 +1,74 @@
+# depslib dependency file v1.0
+1428640311 source:q:\projects\scripting\main.cpp
+	<iostream>
+	"Class.h"
+	"Builtin.h"
+	"String.h"
+
+1428653387 q:\projects\scripting\namespace.h
+	<string>
+	<map>
+	"Item.h"
+
+1428620019 q:\projects\scripting\item.h
+	"ArgumentList.h"
+	<string>
+	<iostream>
+
+1428454957 source:q:\projects\scripting\namespace.cpp
+	<iostream>
+	<sstream>
+	<limits>
+	"NameSpace.h"
+
+1428353015 source:q:\projects\scripting\class.cpp
+	<iostream>
+	<sstream>
+	"Class.h"
+
+1428200815 q:\projects\scripting\class.h
+	"NameSpace.h"
+
+1428455033 source:q:\projects\scripting\item.cpp
+	<iostream>
+	"Item.h"
+
+1428617322 source:q:\projects\scripting\argumentlist.cpp
+	"ArgumentList.h"
+
+1428617666 q:\projects\scripting\argumentlist.h
+	<vector>
+	"NameSpace.h"
+
+1428640405 source:q:\projects\scripting\string.cpp
+	<iostream>
+	<sstream>
+	"String.h"
+
+1428249825 q:\projects\scripting\string.h
+	<string>
+	"Class.h"
+
+1428353015 source:q:\projects\scripting\command.cpp
+	"Command.h"
+
+1428653397 q:\projects\scripting\command.h
+	"Item.h"
+	"ArgumentList.h"
+
+1428615708 source:q:\projects\scripting\builtin.cpp
+	<iostream>
+	<sstream>
+	"Builtin.h"
+
+1428615702 q:\projects\scripting\builtin.h
+	"Command.h"
+
+1428652029 source:q:\projects\scripting\function.cpp
+	<sstream>
+	"Function.h"
+
+1428651667 q:\projects\scripting\function.h
+	"NameSpace.h"
+	"Command.h"
+
