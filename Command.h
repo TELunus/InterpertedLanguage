@@ -8,7 +8,7 @@ class Command: public virtual Item
 {
 public:
 	virtual ~Command();
-	virtual Item* run(ArgumentList& arguments) = 0;
+	virtual Item* run(ArgumentList& arguments,NameSpace* spaceToSearch) = 0;
 };
 
 #endif // COMMAND_H

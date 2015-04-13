@@ -7,7 +7,7 @@
 class Function: public NameSpace, public Command
 {
 public:
-	virtual Item* run(ArgumentList& myArguments);
+	virtual Item* run(ArgumentList& arguments,NameSpace* spaceToSearch);
 	//virtual void add(const Item& toAdd,std::string subName);
 	void append(Command* toAppend,ArgumentList& arguments);
 	virtual Item* clone()const;

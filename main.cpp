@@ -5,20 +5,20 @@
 #include "String.h"
 #include "Function.h"
 
-Item* printItem(ArgumentList& myArgs);
+Item* printItem(ArgumentList& myArgs,NameSpace* spaceToSearch);
 
-Item* printItem(ArgumentList& myArgs)
+Item* printItem(ArgumentList& myArgs,NameSpace* spaceToSearch)
 {
 	std::cout<<"PrintItem:"<<std::endl;
-	std::cout<<myArgs.argumentAt(0)->print()<<std::endl;
+	std::cout<<myArgs.argumentAt(spaceToSearch,0)->print()<<std::endl;
 	return nullptr;
 }
 
-Item* assignString(ArgumentList& myArgs);
+Item* assignString(ArgumentList& myArgs,NameSpace* spaceToSearch);
 
-Item* assignString(ArgumentList& myArgs)
+Item* assignString(ArgumentList& myArgs,NameSpace* spaceToSearch)
 {
-	myArgs.argumentAt(0)->assignValue(myArgs.argumentAt(1)->print());
+	myArgs.argumentAt(spaceToSearch,0)->assignValue(myArgs.argumentAt(spaceToSearch,1)->print());
 	return nullptr;
 }
 
@@ -53,30 +53,30 @@ int main()
     Builtin printString(printItem);
     testSpace.add(new String("This is text\n"),"testString");
     testSpace.add(&printString,"print");
-    ArgumentList argsToPrint(&testSpace);
+    ArgumentList argsToPrint;
     argsToPrint.add("testString","parameter");
-	testSpace.access("print")->run(argsToPrint);
+	//testSpace.access("print")->run(argsToPrint);
 	std::cout<<"testing string assignment"<<std::endl;
 	Builtin stringAssign(assignString);
 	testSpace.add(&stringAssign,"stringAssign");
 	testSpace.add(new String("Some more text"),"newValue");
-	ArgumentList assignmentArgs(&testSpace);
+	ArgumentList assignmentArgs;
 	assignmentArgs.add("testString","parameter 1");
 	assignmentArgs.add("newValue","parameter 2");
-	testSpace.access("stringAssign")->run(assignmentArgs);
-	testSpace.access("print")->run(argsToPrint);
+	testSpace.access("stringAssign")->run(assignmentArgs,&testSpace);
+	testSpace.access("print")->run(argsToPrint,&testSpace);
 
 	std::cout<<"Testing function functionality"<<std::endl;
 
 	Function editAndPrint;
 	editAndPrint.add(new String("Initial value"),"StringOne");
-	ArgumentList funcTestArgs(&testSpace);
+	ArgumentList funcTestArgs;
 	testSpace.add(new String("Final value"),"TestStringTwo");
 	funcTestArgs.add("TestStringTwo","StringTwo");
-	ArgumentList funcAssignmentArgs(&editAndPrint);
+	ArgumentList funcAssignmentArgs;
 	funcAssignmentArgs.add("StringOne","Uninportant1");
 	funcAssignmentArgs.add("StringTwo","Uninportant2");
-	ArgumentList funcPrintArgs(&editAndPrint);
+	ArgumentList funcPrintArgs;
 	//todo: Argument list needs to determine namespace on name evaluation
 
 //	testClass.add(Object("String",ArgumentList()),"testString");

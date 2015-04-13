@@ -1,11 +1,11 @@
 #include "ArgumentList.h"
 
-ArgumentList::ArgumentList(NameSpace* myNamespace):m_myNamespace(myNamespace),m_arguments(),m_names()
+ArgumentList::ArgumentList():m_arguments(),m_names()
 {
 	//
 }
 
-ArgumentList::ArgumentList(const ArgumentList& other):m_myNamespace(other.m_myNamespace),m_arguments(),m_names()
+ArgumentList::ArgumentList(const ArgumentList& other):m_arguments(),m_names()
 {
 	for (unsigned int i = 0;(i<other.m_arguments.size())&&(i<other.m_names.size());i++)
 	{
@@ -46,8 +46,8 @@ std::string ArgumentList::nameAt(unsigned int i)
 	return m_names.at(i);
 }
 
-Item* ArgumentList::argumentAt(unsigned int i)
+Item* ArgumentList::argumentAt(NameSpace* spaceToSearch,unsigned int i)
 {
-	return m_myNamespace->access(m_arguments.at(i));
+	return spaceToSearch->access(m_arguments.at(i));
 	//return m_arguments.at(i);
 }

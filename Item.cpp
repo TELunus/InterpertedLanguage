@@ -24,7 +24,7 @@ Item* Item::dot(std::string subName)
 	return nullptr;
 }
 
-Item* Item::run(ArgumentList& arguments)
+Item* Item::run(ArgumentList& arguments,NameSpace* spaceToSearch)
 {
 	std::cout<<"Tried to run non-command item"<<std::endl;
 	return nullptr;

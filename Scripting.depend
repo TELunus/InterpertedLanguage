@@ -72,3 +72,77 @@
 	"NameSpace.h"
 	"Command.h"
 
+1428942201 source:q:\projects\scripting\scriptinglanguage\builtin.cpp
+	<iostream>
+	<sstream>
+	"Builtin.h"
+
+1428942207 q:\projects\scripting\scriptinglanguage\builtin.h
+	"Command.h"
+
+1428942216 q:\projects\scripting\scriptinglanguage\command.h
+	"Item.h"
+	"ArgumentList.h"
+
+1428942444 q:\projects\scripting\scriptinglanguage\item.h
+	"ArgumentList.h"
+	<string>
+	<iostream>
+
+1428941745 q:\projects\scripting\scriptinglanguage\argumentlist.h
+	<vector>
+	"NameSpace.h"
+
+1428653387 q:\projects\scripting\scriptinglanguage\namespace.h
+	<string>
+	<map>
+	"Item.h"
+
+1428353015 source:q:\projects\scripting\scriptinglanguage\class.cpp
+	<iostream>
+	<sstream>
+	"Class.h"
+
+1428200815 q:\projects\scripting\scriptinglanguage\class.h
+	"NameSpace.h"
+
+1428353015 source:q:\projects\scripting\scriptinglanguage\command.cpp
+	"Command.h"
+
+1428942339 source:q:\projects\scripting\scriptinglanguage\function.cpp
+	<sstream>
+	"Function.h"
+
+1428942238 q:\projects\scripting\scriptinglanguage\function.h
+	"NameSpace.h"
+	"Command.h"
+
+1428942459 source:q:\projects\scripting\scriptinglanguage\item.cpp
+	<iostream>
+	"Item.h"
+
+1428942399 source:q:\projects\scripting\scriptinglanguage\main.cpp
+	<iostream>
+	"Class.h"
+	"Builtin.h"
+	"String.h"
+	"Function.h"
+
+1428249825 q:\projects\scripting\scriptinglanguage\string.h
+	<string>
+	"Class.h"
+
+1428454957 source:q:\projects\scripting\scriptinglanguage\namespace.cpp
+	<iostream>
+	<sstream>
+	<limits>
+	"NameSpace.h"
+
+1428640405 source:q:\projects\scripting\scriptinglanguage\string.cpp
+	<iostream>
+	<sstream>
+	"String.h"
+
+1428941768 source:q:\projects\scripting\scriptinglanguage\argumentlist.cpp
+	"ArgumentList.h"
+

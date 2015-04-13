@@ -2,7 +2,7 @@
 #include <sstream>
 #include "Builtin.h"
 
-Builtin::Builtin(Item* (*myAction)(ArgumentList&)):m_myAction(myAction)
+Builtin::Builtin(Item* (*myAction)(ArgumentList&,NameSpace* spaceToSearch)):m_myAction(myAction)
 {
 	//
 }
@@ -12,10 +12,10 @@ Builtin::~Builtin()
 	//std::cout<<"<Builtin/>"<<std::endl;
 }
 
-Item* Builtin::run(ArgumentList& arguments)
+Item* Builtin::run(ArgumentList& arguments,NameSpace* spaceToSearch)
 {
 	//std::cout<<"Running..."<<std::endl;
-	Item* result = (*m_myAction)(arguments);
+	Item* result = (*m_myAction)(arguments,spaceToSearch);
 	//Item* cloned = result->clone();
 	//std::cout<<"Finished!"<<std::endl;
 	//delete result//do we want this?

@@ -22,7 +22,7 @@ public:
 	virtual Item* access(std::string identifier);
 	virtual void add(Item* toAdd,std::string name);
 	virtual Item* dot(std::string subName);
-	virtual Item* run(ArgumentList& arguments);
+	virtual Item* run(ArgumentList& arguments,NameSpace* spaceToSearch);
 	virtual Item* elementAt(int index);
 	virtual void assignValue(std::string value);
 };

@@ -2,17 +2,17 @@
 
 #include "Function.h"
 
-Item* Function::run(ArgumentList& myArguments)
+Item* Function::run(ArgumentList& arguments,NameSpace* spaceToSearch)
 {
 	NameSpace instanceNamespace(*this);
-	for(unsigned int i = 0;i<myArguments.size();i++)
+	for(unsigned int i = 0;i<arguments.size();i++)
 	{
-		instanceNamespace.add(myArguments.argumentAt(i),myArguments.nameAt(i));
+		instanceNamespace.add(arguments.argumentAt(spaceToSearch,i),arguments.nameAt(i));
 	}
 	for(unsigned int i = 0;i<m_commands.size();i++)
 	{
 		//set namespace to search
-		m_commands.at(i)->run(m_arguments.at(i));//redo argument system
+		m_commands.at(i)->run(m_arguments.at(i),spaceToSearch);//redo argument system
 	}
 	return instanceNamespace.access("result");
 }
