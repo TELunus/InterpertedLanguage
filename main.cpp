@@ -76,7 +76,12 @@ int main()
 	ArgumentList funcAssignmentArgs;
 	funcAssignmentArgs.add("StringOne","Uninportant1");
 	funcAssignmentArgs.add("StringTwo","Uninportant2");
+	editAndPrint.append(testSpace.access("stringAssign"),funcAssignmentArgs);
 	ArgumentList funcPrintArgs;
+	funcPrintArgs.add("StringOne","Uninportant3");
+	//editAndPrint.append(testSpace.access("print"),funcPrintArgs);
+	testSpace.add(&editAndPrint,"TestFunction");
+	testSpace.access("TestFunction")->run(funcTestArgs,&testSpace);
 	//todo: Argument list needs to determine namespace on name evaluation
 
 //	testClass.add(Object("String",ArgumentList()),"testString");

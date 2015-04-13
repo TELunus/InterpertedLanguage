@@ -9,12 +9,12 @@ class Function: public NameSpace, public Command
 public:
 	virtual Item* run(ArgumentList& arguments,NameSpace* spaceToSearch);
 	//virtual void add(const Item& toAdd,std::string subName);
-	void append(Command* toAppend,ArgumentList& arguments);
+	void append(Item* toAppend,ArgumentList& arguments);
 	virtual Item* clone()const;
 	virtual std::string print()const;
 
 private:
-	std::vector<Command*> m_commands;
+	std::vector<Item*> m_commands;
 	std::vector<ArgumentList> m_arguments;
 
 };

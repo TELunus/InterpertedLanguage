@@ -33,7 +33,7 @@ std::string Function::print() const
 	return result.str();
 }
 
-void Function::append(Command* toAppend,ArgumentList& arguments)
+void Function::append(Item* toAppend,ArgumentList& arguments)
 {
 	m_commands.push_back(toAppend);
 	m_arguments.push_back(arguments);
